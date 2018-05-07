@@ -13,15 +13,15 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => 'localhost',
     // 数据库名
-    'database'        => '',
+    'database'        => 'tp5_demo',
     // 用户名
     'username'        => 'root',
     // 密码
-    'password'        => '',
+    'password'        => 'mysql1230',
     // 端口
-    'hostport'        => '',
+    'hostport'        => '3306',
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
@@ -29,7 +29,7 @@ return [
     // 数据库编码默认采用utf8
     'charset'         => 'utf8',
     // 数据库表前缀
-    'prefix'          => '',
+    'prefix'          => 'think_',
     // 数据库调试模式
     'debug'           => true,
     // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
@@ -53,3 +53,27 @@ return [
     // 是否需要进行SQL性能分析
     'sql_explain'     => false,
 ];
+
+
+/**
+ *
+ * 来自 《thinkPHP 5.0 快速入门》
+ * 在数据库 tp5_demo 中插入表think_data
+
+ * CREATE TABLE IF NOT EXISTS `think_data`(
+`id` int(8) unsigned NOT NULL AUTO_INCREMENT,
+`data` varchar(255) NOT NULL,
+PRIMARY KEY (`id`)
+)ENGINE=MYISAM DEFAULT CHARSET=utf8;
+ *
+ *
+ * 往表 tp5_demo 中插入数据
+ INSERT INTO `think_data` (`id`,`data`) VALUES
+ (1,`thinkphp`),
+ (2,`php`),
+ (3,`framework`);
+
+INSERT INTO `think_data` (`id`, `data`) VALUES ('1', 'thinkphpAuto');
+
+ *
+ */

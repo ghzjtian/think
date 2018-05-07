@@ -18,4 +18,7 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
+    //添加路由规则，路由到 index 控制器的 hello 操作方法,P25
+    'hello/[:name]' => 'index/hello',
+
 ];
