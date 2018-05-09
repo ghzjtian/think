@@ -32,18 +32,18 @@ class Index extends Controller
         return $this->fetch();
     }
 
-////读取数据,P16
-//public function  index(){
-//    $data = Db::name('data') ->find();
-//    $this->assign('result',$data);
-//    return $this->fetch();
-//}
-//异常页面,P147
-    public function index()
-    {
-        trace('测试111');
-        return 'hello,' . $_GET['name'];
-    }
+//读取数据,P16
+public function  index(){
+    $data = Db::name('data') ->find();
+    $this->assign('result',$data);
+    return $this->fetch();
+}
+////异常页面,P147
+//    public function index()
+//    {
+//        trace('测试111');
+//        return 'hello,' . $_GET['name'];
+//    }
 
 //参数传入,P21
     public function hello2($name = 'World', $city = '')
