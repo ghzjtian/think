@@ -1,6 +1,10 @@
 <?php
 namespace app\demo\controller;
-
+/**
+ * Class Index
+ * @package app\demo\controller
+ * 用 `php think build --module demo` 命令，新增一个 demo 模型.
+ */
 class Index
 {
     public function index()

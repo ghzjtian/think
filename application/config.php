@@ -17,7 +17,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -28,7 +28,7 @@ return [
     'root_namespace'         => [],
     // 扩展函数文件
     'extra_file_list'        => [THINK_PATH . 'helper' . EXT],
-    // 默认输出类型
+    // 默认输出类型,html,json,xml
     'default_return_type'    => 'html',
     // 默认AJAX 数据返回格式,可选json xml ...
     'default_ajax_return'    => 'json',
@@ -41,13 +41,15 @@ return [
     // 是否开启多语言
     'lang_switch_on'         => false,
     // 默认全局过滤方法 用逗号分隔多个
-    'default_filter'         => '',
+    'default_filter'         => 'htmlspecialchars',
     // 默认语言
     'default_lang'           => 'zh-cn',
     // 应用类库后缀
     'class_suffix'           => false,
     // 控制器类后缀
     'controller_suffix'      => false,
+
+
 
     // +----------------------------------------------------------------------
     // | 模块设置
@@ -158,7 +160,7 @@ return [
     // 显示错误信息
     'show_error_msg'         => false,
     // 异常处理handle类 留空使用 \think\exception\Handle
-    'exception_handle'       => '',
+    'exception_handle'       => '\app\api\exception\Http',
 
     // +----------------------------------------------------------------------
     // | 日志设置
@@ -179,6 +181,8 @@ return [
     'trace'                  => [
         // 内置Html Console 支持扩展
         'type' => 'Html',
+//        // 使用浏览器console显示页面trace信息
+//        'type' => 'console',
     ],
 
     // +----------------------------------------------------------------------
@@ -238,4 +242,29 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+
+    //数据库配置 think_test
+    'db_test' =>[
+        // 数据库类型
+        'type'            => 'mysql',
+        // 服务器地址
+        'hostname'        => 'localhost',
+        // 数据库名
+        'database'        => 'tp5_demo',
+        // 用户名
+        'username'        => 'root',
+        // 密码
+        'password'        => 'mysql1230',
+        // 端口
+        'hostport'        => '3306',
+        // 数据库连接参数
+        'params'          => [],
+        // 数据库编码默认采用utf8
+        'charset'         => 'utf8',
+        // 数据库表前缀
+        'prefix'          => 'think_',
+    ],
+
+
 ];

@@ -1,8 +1,10 @@
 <?php
+
 namespace app\index\controller;
 
 use think\Controller;
 use think\Db;
+use think\Request;
 
 class Index extends Controller
 {
@@ -24,22 +26,74 @@ class Index extends Controller
 //    }
 
 //视图,P14
-    public function hello($name = 'thinkphp'){
-        $this -> assign('name',$name);
+    public function hello($name = 'thinkphp')
+    {
+        $this->assign('name', $name);
         return $this->fetch();
     }
 
-//读取数据,P16
-public function  index(){
-    $data = Db::name('data') ->find();
-    $this->assign('result',$data);
-    return $this->fetch();
-}
+////读取数据,P16
+//public function  index(){
+//    $data = Db::name('data') ->find();
+//    $this->assign('result',$data);
+//    return $this->fetch();
+//}
+//异常页面,P147
+    public function index()
+    {
+        trace('测试111');
+        return 'hello,' . $_GET['name'];
+    }
 
 //参数传入,P21
-public function hello2($name = 'World',$city = ''){
-        return 'Hello,'.$name.'!You come from '.$city.'.';
-}
+    public function hello2($name = 'World', $city = '')
+    {
+        return 'Hello,' . $name . '!You come from ' . $city . '.';
+    }
 
+//请求对象,P33
+    public function index2($name = 'World')
+    {
+        $request = Request::instance();
+        //获取当前 URL 地址，不含域名
+        echo 'url: ' . $request->url() . '<br/>';
+        echo '请求参数:<br/>';
+//    dump($request -> param());
+        dump(input());
+        echo 'name1:' . $request->param('name1', 'World', 'strtoupper') . '<br/>';
+        return 'Hello,' . $name . '!';
+    }
+
+//自动输出,P43
+    public function index3()
+    {
+        $data = ['name' => 'thinkphp', 'status' => '1'];
+//        return $data;
+        //手动输出,P44
+//    return json($data,201);
+        return json($data, 201, ['Cache-control' => 'no-cache,must-revalidate']);
+    }
+
+//页面跳转,P45
+    public function index4($name = '')
+    {
+        if ('thinkphp' == $name) {
+            $this->redirect('http://thinkphp.cn');
+        } else {
+            $this->success('欢迎使用 Tian 的 PHP', 'welcome');
+//            $this->error('错误的name','guest');
+        }
+
+    }
+
+    public function welcome()
+    {
+        return 'Hello,ThinkPHP!from welcome page';
+    }
+
+    public function guest()
+    {
+        return 'Hello,Guest!';
+    }
 
 }
