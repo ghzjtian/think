@@ -1,7 +1,7 @@
 # ThinkPHP 5.0
 
->本例子的说明根据《thinkphp5开发手册合集.chm》去学习和注释.
-
+>本例子( branch manual_5 )的说明根据《thinkphp5开发手册合集.chm》去学习和注释.
+>例子(branch master)的说明是根据《ThinkPHP_5.0_快速入门_2017040107595387.pdf》 去学习和注释的.
 
 ===============
 
