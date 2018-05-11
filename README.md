@@ -1,4 +1,8 @@
-ThinkPHP 5.0
+# ThinkPHP 5.0
+
+>本例子的说明根据《thinkphp5开发手册合集.chm》去学习和注释.
+
+
 ===============
 
 [![Total Downloads](https://poser.pugx.org/topthink/think/downloads)](https://packagist.org/packages/topthink/think)
