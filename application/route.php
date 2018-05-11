@@ -17,6 +17,7 @@ Route::rule(':version/user/:id','api/:version.User/read');
 //RESTFul , P161
 Route::resource('blogs','db/blog');
 
+
 return [
 
 

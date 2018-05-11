@@ -1,4 +1,9 @@
 ThinkPHP 5.0
+
+
+> 本例子的解析基于《ThinkPHP5.0 快速入门去创建》
+
+
 ===============
 
 [![Total Downloads](https://poser.pugx.org/topthink/think/downloads)](https://packagist.org/packages/topthink/think)
